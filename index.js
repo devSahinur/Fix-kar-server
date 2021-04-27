@@ -55,6 +55,23 @@ client.connect(err => {
     })
 })
 
+app.post('/addOrder', (req, res) => {
+  const newServices = req.body;
+  console.log(newServices);
+  ordersCollection.insertOne(newServices)
+  .then(result => {
+      console.log(result.insertedCount);
+      res.send(result.insertedCount > 0)
+  })
+})
+
+app.get('/orders', (req, res) => {
+  ordersCollection.find({})
+  .toArray((err, document) => {
+      res.send(document)
+  })
+})
+
 
 });
 
