@@ -21,6 +21,39 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 client.connect(err => {
     console.log('erro',err)
   const ordersCollection = client.db("fixkar").collection("orders");
+  const testimonialCollection = client.db("fixkar").collection("testimonial");
+  const serivcesCollection = client.db("fixkar").collection("serivces");
+
+  app.post('/addTestimonial', (req, res) => {
+    const testimonial = req.body;
+    testimonialCollection.insertOne(testimonial)
+        .then(result => {
+            res.send(result.insertedCount > 0)
+        })
+  })
+
+  app.get('/testimonial', (req, res) => {
+    testimonialCollection.find({})
+        .toArray((err, documents) => {
+            res.send(documents);
+        })
+  })
+
+  app.post('/addServices', (req, res) => {
+    const services = req.body;
+    serivcesCollection.insertOne(services)
+    .then(result => {
+        console.log(result.insertedCount);
+        res.send(result.insertedCount > 0)
+    })
+  })
+
+  app.get('/services', (req, res) => {
+    serivcesCollection.find({})
+    .toArray((err, document) => {
+        res.send(document)
+    })
+})
 
 
 });
