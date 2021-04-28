@@ -78,6 +78,13 @@ app.post('/addAdmin', (req, res) => {
       .then(result => res.send(!!result.insertedCount))
 })
 
+app.get('/isAdmin', (req, res) => {
+  adminsCollection.find({})
+    .toArray((err, document) => {
+    res.send(document)
+  })
+})
+
 
 });
 
