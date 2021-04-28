@@ -1,22 +1,11 @@
 # **fix-kar**
 
-
-## About & Features
-
-**fix-kar** is a car servicing website. It have an Dashboard page. It have Its won database.
-### Front-end Technology : 
-- **React, React-Router-Dom,**
-- **React-Bootstrap**
-- **CSS3**
-- **Firebase Authentication**
-
-
 ### Back-end Technology : 
 - **Node**
 - **Express**
 - **MongoDB**
 
-### `Website Link :` [https://fix-kar.web.app/](https://fix-kar.web.app/)
+### `API Link :` [https://peaceful-coast-06734.herokuapp.com/](https://peaceful-coast-06734.herokuapp.com/)
 
 <hr/>
 
