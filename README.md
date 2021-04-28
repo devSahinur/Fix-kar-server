@@ -9,5 +9,5 @@
 
 <hr/>
 
-**[Backed-end Repository](https://github.com/Porgramming-Hero-web-course/complete-website-server-devSahinur)**
+**[Back-end Repository](https://github.com/Porgramming-Hero-web-course/complete-website-server-devSahinur)**
 <hr/>
