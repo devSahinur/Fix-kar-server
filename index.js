@@ -23,6 +23,7 @@ client.connect(err => {
   const ordersCollection = client.db("fixkar").collection("orders");
   const testimonialCollection = client.db("fixkar").collection("testimonial");
   const serivcesCollection = client.db("fixkar").collection("serivces");
+  const adminsCollection = client.db("fixkar").collection("admins");
 
   app.post('/addTestimonial', (req, res) => {
     const testimonial = req.body;
@@ -70,6 +71,11 @@ app.get('/orders', (req, res) => {
   .toArray((err, document) => {
       res.send(document)
   })
+})
+
+app.post('/addAdmin', (req, res) => {
+  adminsCollection.insertOne(req.body)
+      .then(result => res.send(!!result.insertedCount))
 })
 
 
